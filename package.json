@@ -1,33 +1,32 @@
 {
-  "name": "coding-interview-backend-level-3",
+  "name": "typescript-hapi-items-api",
   "version": "1.0.0",
-  "description": "Coding Interview Backend Level 3",
+  "description": "Layered TypeScript and Hapi REST API backed by PostgreSQL",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest e2e",
+    "test": "jest --runInBand",
+    "typecheck": "tsc --noEmit",
     "start": "ts-node src/index.ts",
     "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc"
   },
-  "author": "El Dorado Dev Team",
-  "license": "ISC",
+  "author": "Andres Vega",
+  "license": "MIT",
   "devDependencies": {
     "@swc/core": "^1.7.2",
     "@swc/jest": "^0.2.36",
     "@types/hapi__hapi": "^20.0.13",
-    "@types/hapi__joi": "^17.1.15",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.17.16",
     "jest": "^29.7.0",
-    "mocha": "^10.7.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.12",
-    "@hapi/joi": "^17.1.1",
-    "knex": "^0.95.15",
+    "joi": "^18.2.9",
+    "knex": "^3.3.0",
     "pg": "^8.13.1"
   }
 }

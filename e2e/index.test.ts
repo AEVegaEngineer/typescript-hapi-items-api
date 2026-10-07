@@ -1,5 +1,6 @@
 import { initializeServer } from '../src/server'
 import { Server } from '@hapi/hapi'
+import { db } from '../src/db'
 
 describe('E2E Tests', () => {
     let server: Server
@@ -11,6 +12,7 @@ describe('E2E Tests', () => {
 
     beforeEach(async () => {
         server = await initializeServer()
+        await db('items').del()
     })
 
     it('should get a response with status code 200', async () => {
@@ -227,7 +229,8 @@ describe('E2E Tests', () => {
         })
     })
 
-    afterAll(() => {
-        return server.stop()
+    afterAll(async () => {
+        await server.stop()
+        await db.destroy()
     })
 })

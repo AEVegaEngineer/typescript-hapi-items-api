@@ -1,4 +1,4 @@
-import Joi from "@hapi/joi";
+import Joi from "joi";
 import { Request, ResponseToolkit } from "@hapi/hapi";
 
 const itemSchema = Joi.object({
